@@ -1,6 +1,7 @@
 <div class="relative bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+      <%= link_to "Donations", donations_path, class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"%>
       <% if current_user %>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <%= link_to 'Log out', destroy_user_session_path, class: "font-medium text-indigo-600 hover:text-indigo-500", method: :delete%>
