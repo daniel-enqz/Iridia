@@ -53,6 +53,7 @@ gem "bootsnap", require: false
 gem "autoprefixer-rails", "10.2.5"
 gem "font-awesome-sass", "~> 5.6.1"
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
