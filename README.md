@@ -1,5 +1,5 @@
 # IRIDIA
-> # _"Donate easily with Iridia, a rails app where users can share their stuff with others."_
+> _<h1>"Donate easily with Iridia, a rails app where users can share their stuff with others."</h1>_
 
 ![image](https://user-images.githubusercontent.com/72522628/166309797-a7123081-bcf5-4bfb-8c4a-6b794c8cca7b.png)
 
