@@ -16,9 +16,19 @@ class DonationsController < ApplicationController
     @donation.owner = current_user
     authorize @donation
     if @donation.save
-      redirect_to donation_path(@donation), notice: 'Studio was successfully created.'
+      redirect_to donations_path, notice: 'Donation was successfully created.'
     else
       render :new
     end
+  end
+
+  private
+
+  def set_donation
+    @donation = Donation.find(params[:id])
+  end
+
+  def donation_params
+    params.require(:donation).permit(:name, :description, :owner, :category)
   end
 end

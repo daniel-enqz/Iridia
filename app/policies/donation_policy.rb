@@ -1,6 +1,6 @@
 class DonationPolicy < ApplicationPolicy
   def create?
-    user.present?
+    true
   end
 
   class Scope < Scope
