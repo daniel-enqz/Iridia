@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :owned_donations, foreign_key: :owner_id, class_name: "Donation"
 
   # AS CUSTOMER
-  has_many :calimed_bookings, foreign_key: :customer_id, class_name: "Donation"
+  has_many :calimed_donations, foreign_key: :customer_id, class_name: "Donation"
 end
