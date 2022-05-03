@@ -1,6 +1,7 @@
 <% if @donations.count == 0 %>
   <div>
     <h1>Still no donations here, be the hero who creates the first one!</h1>
+    <%= link_to 'Create Donation', new_donation_path, class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"%>
   </div>
 <% else %>
   <div>
