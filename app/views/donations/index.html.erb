@@ -1,1 +1,11 @@
-<h1>Donations</h1>
+<% if @donations.count == 0 %>
+  <div>
+    <h1>Still no donations here, be the hero who creates the first one!</h1>
+  </div>
+<% else %>
+  <div>
+    <% @donations.each do |donation| %>
+      <%= donation.name %>
+    <% end %>
+  </div>
+<% end %>
