@@ -1,45 +1,31 @@
+<div class="main w-max m-auto mt-10">
+  <h2 class="text-2xl mb-6">Share with others</h2>
 
-<div class="hidden sm:block" aria-hidden="true">
-  <div class="py-5">
-    <div class="border-t border-gray-200"></div>
-  </div>
-</div>
+  <%= simple_form_for @donation do |f| %>
 
-<div class="mt-10 sm:mt-0">
-  <div class="md:grid md:grid-cols-3 md:gap-6">
-    <div class="mt-5 md:mt-0 md:col-span-2">
-      <form action="/donations" method="POST", accept-charset="UTF-8">
-        <div class="shadow overflow-hidden sm:rounded-md">
-          <div class="px-4 py-5 bg-white sm:p-6">
-            <div class="grid grid-cols-6 gap-6">
-
-              <div class="col-span-6 sm:col-span-3">
-                <label for="name" class="block text-sm font-medium text-gray-700">Title</label>
-                <input type="text" name="donation[name]" id="name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
-
-              <div class="col-span-6 sm:col-span-4">
-                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                <input type="text" name="donation[description]" id="description" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
-
-              <div class="col-span-6 sm:col-span-3">
-                <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-                <select id="category" name="donation[category]" autocomplete="category-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option>Food</option>
-                  <option>Clothings</option>
-                  <option>Electronics</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-            </div>
-          </div>
-          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
-          </div>
-        </div>
-      </form>
+    <div class="flex rounded text-gray-500 mb-4">
+      <%= f.text_area :name, autofocus: true,
+        class: "outline-none px-4 h-full py-2 text-lg",
+        placeholder: "Post Title"
+      %>
     </div>
-  </div>
+
+    <div class="flex rounded text-gray-500 mb-4">
+      <%= f.text_area :description,
+        class: "outline-none px-4 h-full py-2 text-lg",
+        placeholder: "Description"
+      %>
+    </div>
+
+     <div class="flex rounded text-gray-500 mb-4">
+        <%= f.select :category, ["Food", "Clothing", "Electronics", "Other"],
+          class: "mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+          placeholder: "Category"
+      %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Donate", class: "rounded mt-6 px-4 bg-blue-500" %>
+    </div>
+  <% end %>
 </div>

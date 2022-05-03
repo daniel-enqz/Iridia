@@ -16,9 +16,12 @@ class DonationsController < ApplicationController
     @donation.owner = current_user
     authorize @donation
     if @donation.save
+      # flash[:success] = "A daily Workout Was Created !"
       redirect_to donations_path, notice: 'Donation was successfully created.'
     else
       render :new
+      puts @donation.errors.messages.inspect
+      raise
     end
   end
 
