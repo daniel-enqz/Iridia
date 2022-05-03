@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   # get "pages/home"
   root to: "pages#home"
+
+  resources :donations, only: %i[index]
 end
