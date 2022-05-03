@@ -15,7 +15,7 @@
           <h2 class="text-gray-800 text-3xl font-semibold"><%= donation.name %></h2>
           <p class="mt-2 text-gray-600"><%= donation.description %></p>
           <p class="mt-2 text-gray-400">Category: <%= donation.category %></p>
-          <p class="mt-2 text-gray-400">Published: <%= donation.short_date(donation.created_at) %></p>
+          <p class="mt-2 text-gray-400">Published: <%= short_date(donation.created_at) %></p>
           <% if donation.claimed? %>
             <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">Claimed</span>
           <% else %>

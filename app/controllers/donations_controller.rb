@@ -1,9 +1,15 @@
 class DonationsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  # before_action :set_donation, only: %i[show edit update destroy]
+  before_action :set_donation, only: %i[show edit update destroy]
 
   def index
     @donations = policy_scope(Donation).order(created_at: :desc)
+  end
+
+  def show
+    authorize @donations
+    @booking = Booking.new
+    @markers = [{ lat: @studio.latitude, lng: @studio.longitude }]
   end
 
   def new
@@ -23,6 +29,7 @@ class DonationsController < ApplicationController
       render :new
     end
   end
+
 
   private
 
