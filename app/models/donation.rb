@@ -7,4 +7,8 @@ class Donation < ApplicationRecord
 
   validates :name, :category, presence: true
   validates :name, length: { maximum: 120 }
+
+  def short_date(date)
+    date.strftime("%a/%b/%Y")
+  end
 end
