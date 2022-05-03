@@ -2,7 +2,6 @@
   <h2 class="text-2xl mb-6">Share with others</h2>
 
   <%= simple_form_for @donation do |f| %>
-
     <div class="flex rounded text-gray-500 mb-4">
       <%= f.text_area :name, autofocus: true,
         class: "outline-none px-4 h-full py-2 text-lg",
@@ -25,7 +24,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Donate", class: "rounded mt-6 px-4 bg-blue-500" %>
+      <%= f.submit "Donate", class: "whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-400 hover:bg-blue-700" %>
     </div>
   <% end %>
 </div>
