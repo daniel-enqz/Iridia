@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+default_password = "123456"
+require "open-uri"
+
+5.times do |n|
+  User.create!(email: "user#{n}@user.com", password: default_password,
+                          first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+end
