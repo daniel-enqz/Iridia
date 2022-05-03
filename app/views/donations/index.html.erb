@@ -1,14 +1,24 @@
-<%= link_to 'Create Donation', new_donation_path, class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-400 hover:bg-indigo-700"%>
+<div class="flex justify-center mt-6">
+  <%= link_to 'Create Donation', new_donation_path, class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-400 hover:bg-indigo-700"%>
+  <%= link_to 'All Donations', donations_path, class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-400 hover:bg-indigo-700"%>
+</div>
+
 <% if @donations.count == 0 %>
   <div>
     <h1>Still no donations here, be the hero who creates the first one!</h1>
   </div>
 <% else %>
-  <div>
+  <div class="h-56 grid grid-cols-3 gap-4 content-start">
     <% @donations.each do |donation| %>
-    <ol>
-      <li><%= donation.name %></li>
-    </ol>
+      <div class="py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+        <div>
+          <h2 class="text-gray-800 text-3xl font-semibold"><%= donation.name %></h2>
+          <p class="mt-2 text-gray-600"><%= donation.description %></p>
+        </div>
+        <div class="flex justify-end mt-4">
+          <a href="#" class="text-xl font-medium text-indigo-500"><%= donation.owner.email %></a>
+        </div>
+      </div>
     <% end %>
   </div>
 <% end %>
