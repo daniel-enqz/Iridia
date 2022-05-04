@@ -44,13 +44,15 @@ class DonationsController < ApplicationController
   def destroy
     authorize @donation
     @donation.destroy
-    redirect_to dashboard_path, notice: 'List was successfully destroyed.'
+    # When dashboard is reday redirect here
+    # redirect_to dashboard_path, notice: 'Donation was successfully destroyed.'
+    redirect_to donations_path, notice: 'Donation was successfully destroyed.'
   end
 
   def claim
-    raise
     @donation = donation.find(params[:id])
     authorize @donation
+    raise
     @donation.update! status: 10
     redirect_to donation_path(@donation)
   end

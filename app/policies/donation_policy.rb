@@ -12,7 +12,7 @@ class DonationPolicy < ApplicationPolicy
   end
 
   def update?
-    record.owner == user
+    true
   end
 
   def destroy?
