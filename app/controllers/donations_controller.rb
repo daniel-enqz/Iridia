@@ -50,10 +50,10 @@ class DonationsController < ApplicationController
   end
 
   def claim
-    @donation = donation.find(params[:id])
+    @donation = Donation.find(params[:id])
     authorize @donation
-    raise
     @donation.update! status: 10
+    @donation.owner = current_user
     redirect_to donation_path(@donation)
   end
 

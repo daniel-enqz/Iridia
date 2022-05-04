@@ -7,14 +7,16 @@
     <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><%= @donation.category %></span>
     <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Published: <%= short_date(@donation.created_at) %></span>
     <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Owner: <%= @donation.owner.email %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Last updated at: </span>
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Last updated at: <%= short_date(@donation.updated_at) %></span>
     <% if @donation.claimed? %>
       <span class="inline-block bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-900 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">Claimed by <%= @donation.customer.email %></span>
     <% end %>
   </div>
     <% if @donation.unclaimed? && policy(@donation).claim? %>
-      <%=link_to "Claim this donation", claim_donation_path(@donation), data: { turbo_method: :patch, turbo_confirm: 'Are you sure?' }, class: "text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-5 mb-4" %>
+      <%# This will be shown to users who can claim the donation, that means those who didn't create it %>
+      <%=link_to "Claim this donation", claim_donation_path(@donation), data: { confirm: 'Are you sure?' }, method: :patch, class: "text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-5 mb-4" %>
     <% else %>
+      <%# This will be shown to users who own the donation or who have claimed it %>
       <%= link_to "View on Dashboard", donations_path, class: "text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-5 mr-2 mb-2" %>
     <% end %>
 </div>
