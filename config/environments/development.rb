@@ -69,4 +69,8 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # This will cause factory_bot_rails to automatically load factories in
+  # custom/factories.rb and custom/factories/*.rb.
+  config.factory_bot.definition_file_paths = ["custom/factories"]
 end
