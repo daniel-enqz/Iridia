@@ -21,13 +21,39 @@ class DonationsController < ApplicationController
     @donation.customer = current_user
     authorize @donation
     if @donation.save
-      # flash[:success] = "A daily Workout Was Created !"
+      # flash[:success] = "Donation Successfully created"
       redirect_to donations_path, notice: 'Donation was successfully created.'
     else
       render :new
     end
   end
 
+  def edit
+    authorize @donation
+  end
+
+  def update
+    authorize @donation
+    if @donation.update(donation_params)
+      redirect_to donation_path(@donation)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    authorize @donation
+    @donation.destroy
+    redirect_to dashboard_path, notice: 'List was successfully destroyed.'
+  end
+
+  def claim
+    raise
+    @donation = donation.find(params[:id])
+    authorize @donation
+    @donation.update! status: 10
+    redirect_to donation_path(@donation)
+  end
 
   private
 

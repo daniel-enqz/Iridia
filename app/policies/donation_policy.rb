@@ -8,7 +8,15 @@ class DonationPolicy < ApplicationPolicy
   end
 
   def claim?
-    record.owner != current_user
+    record.owner != user
+  end
+
+  def update?
+    record.owner == user
+  end
+
+  def destroy?
+    record.owner == user
   end
 
   class Scope < Scope
