@@ -1,11 +1,10 @@
-<%= link_to claimed, class: "py-4 px-8 bg-white shadow-lg rounded-lg mt-20" do %>
+<%= link_to claimed, class: "py-4 px-8 bg-white shadow-lg rounded-lg m-3" do %>
     <div>
       <h2 class="text-gray-800 text-3xl font-semibold"><%= claimed.name %></h2>
       <p class="mt-2 text-gray-600"><%= claimed.description %></p>
       <p class="mt-2 text-gray-400">Category: <%= claimed.category %></p>
       <p class="mt-2 text-gray-400">Published: <%= short_date(claimed.created_at) %></p>
       <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">YOU OWN THIS DONATION</span>
-      <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Unclaimed</span>
     </div>
     <div class="flex justify-end mt-4">
       <p href="#" class="text-xl font-medium text-indigo-500">Contact the owner: <%= claimed.owner.email %></p>

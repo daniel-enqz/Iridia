@@ -46,7 +46,7 @@ class DonationsController < ApplicationController
     @donation.destroy
     # When dashboard is reday redirect here
     # redirect_to dashboard_path, notice: 'Donation was successfully destroyed.'
-    redirect_to donations_path, notice: 'Donation was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Donation was successfully destroyed.'
   end
 
   def claim
