@@ -18,7 +18,7 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     @donation.owner = current_user
-    @donation.customer = current_user
+    @donation.customer = false
     authorize @donation
     if @donation.save
       # flash[:success] = "Donation Successfully created"

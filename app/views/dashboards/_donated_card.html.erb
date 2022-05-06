@@ -1,0 +1,10 @@
+<%= link_to donation, class: "py-4 px-8 bg-white shadow-lg rounded-lg mt-20" do %>
+    <div>
+      <h2 class="text-gray-800 text-3xl font-semibold"><%= donation.name %></h2>
+      <% if donation.claimed? %>
+        <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">Claimed</span>
+      <% else %>
+        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Unclaimed</span>
+      <% end %>
+    </div>
+<% end %>
