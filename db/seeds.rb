@@ -23,8 +23,15 @@ print "Creating Donations❤️"
 20.times do |n|
   print "."
   user = User.all.sample
-  Donation.create!(name: Faker::Commerce.product_name, owner: user, customer: user, category: categories.sample,
-  description: Faker::Lorem.sentence(word_count: 10, supplemental: true) )
+  customer = User.all.excluding(user).sample
+  create_customer = rand(0..1)
+  if create_customer == 0
+    Donation.create!(name: Faker::Commerce.product_name, owner: user, category: categories.sample,
+    description: Faker::Lorem.sentence(word_count: 10, supplemental: true), customer: customer, status: 10)
+  else
+    Donation.create!(name: Faker::Commerce.product_name, owner: user, category: categories.sample,
+    description: Faker::Lorem.sentence(word_count: 10, supplemental: true))
+  end
 end
 puts "."
 puts "✅ 20 Donations were created successfully"
