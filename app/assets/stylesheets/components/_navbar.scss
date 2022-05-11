@@ -1,8 +1,9 @@
 .navbar-white {
   background-color: white;
+  transition: 0.5s background-color ease;
 }
 
 .navbar-transparent {
-  background-color: transparent;
-  transition: 0.5s background-color ease;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
 }
