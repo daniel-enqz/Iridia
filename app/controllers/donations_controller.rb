@@ -3,7 +3,11 @@ class DonationsController < ApplicationController
   before_action :set_donation, only: %i[show edit update destroy]
 
   def index
-    @donations = policy_scope(Donation).order(created_at: :desc)
+    if params.dig(:search, :query).present?
+      @donations = policy_scope(Donation).where("name ILIKE ?", "%#{params.dig(:search, :query)}%")
+    else
+      @donations = policy_scope(Donation).order(created_at: :desc)
+    end
   end
 
   def show
