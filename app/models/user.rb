@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # AS OWNER
-  has_many :owned_donations, foreign_key: :owner_id, class_name: "Donation"
+  has_many :owned_donations, foreign_key: :owner_id, class_name: "Donation", dependent: :destroy
 
   # AS CUSTOMER
-  has_many :claimed_donations, foreign_key: :customer_id, class_name: "Donation"
+  has_many :claimed_donations, foreign_key: :customer_id, class_name: "Donation", dependent: :destroy
 end
