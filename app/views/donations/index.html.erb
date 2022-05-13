@@ -10,22 +10,7 @@
 <% else %>
   <div class="h-56 grid grid-cols-3 gap-4 content-start">
     <% @donations.each do |donation| %>
-      <div class="py-4 px-8 bg-white shadow-lg rounded-lg mt-20">
-        <div>
-          <h2 class="text-gray-800 text-3xl font-semibold"><%= donation.name %></h2>
-          <p class="mt-2 text-gray-600"><%= donation.description %></p>
-          <p class="mt-2 text-gray-400">Category: <%= donation.category %></p>
-          <p class="mt-2 text-gray-400">Published: <%= donation.short_date(donation.created_at) %></p>
-          <% if donation.claimed? %>
-            <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">Claimed</span>
-          <% else %>
-            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Unclaimed</span>
-          <% end %>
-        </div>
-        <div class="flex justify-end mt-4">
-          <a href="#" class="text-xl font-medium text-indigo-500"><%= donation.owner.email %></a>
-        </div>
-      </div>
+      <%= render 'donations/card', donation: donation %>
     <% end %>
   </div>
 <% end %>

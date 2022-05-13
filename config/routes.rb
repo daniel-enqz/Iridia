@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   # get "pages/home"
   root to: "pages#home"
 
-  resources :donations, only: %i[index new create]
+  resources :donations, only: %i[index show new create edit update destroy] do
+    member do
+      patch :claim
+    end
+  end
 end
