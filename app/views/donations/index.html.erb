@@ -24,7 +24,7 @@
         <%= link_to "SIGN UP TO CLAIM AND DONATE 😍", new_user_registration_path, class: "text-white font-bold bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
       </div>
     <% end %>
-  <div class="h-56 grid grid-cols-3 gap-4 content-start">
+  <div class="h-56 sm:grid md:grid-cols-3 md:gap-4 content-start flex flex-wrap">
     <% @donations.each do |donation| %>
       <%= render 'donations/card', donation: donation %>
     <% end %>
