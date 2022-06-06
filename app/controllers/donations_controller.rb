@@ -18,7 +18,7 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     @donation.owner = current_user
-    @donation.customer = current_user
+    @donation.customer = false
     authorize @donation
     if @donation.save
       # flash[:success] = "Donation Successfully created"
@@ -46,7 +46,7 @@ class DonationsController < ApplicationController
     @donation.destroy
     # When dashboard is reday redirect here
     # redirect_to dashboard_path, notice: 'Donation was successfully destroyed.'
-    redirect_to donations_path, notice: 'Donation was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Donation was successfully destroyed.'
   end
 
   def claim
