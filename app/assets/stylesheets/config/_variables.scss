@@ -1,16 +1,16 @@
-// Colors
+// Primary Colors
 $primary:       $cool_purple;
 $primary_light: $light_purple;
-$secondary:     $iris;
-$success:       $green;
-$info:          $light-blue;
-$danger:        $red;
-$warning:       $turquoise;
-$gray-700:      $gray-700;
 
-// Buttons & inputs' radius
-$border-radius:    2px;
-$border-radius-lg: 2px;
-$border-radius-sm: 2px;
+// Secondary Colors
+$secondary:     $seafoam;
 
-// Override other variables below!
+// States
+$success:       $fountain_green;
+$error:         $red_punch;
+$warning:       $yellow_orange;
+$disabled:      $grey;
+
+// Text
+$text_normal:        $second_grey;
+$text_light:         $white;
