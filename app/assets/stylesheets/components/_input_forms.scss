@@ -1,16 +1,8 @@
 @import "config/variables";
 .input {
   /* Input */
-  box-sizing: border-box;
-
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
 
   background: #FFFFFF;
-
   border: 1px solid $five_grey;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
   border-radius: 6px;
@@ -73,26 +65,5 @@
         color: #73191E;
       }
     }
-  }
-
-  .label {
-    /* Label */
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 75.36%;
-
-    /* Label */
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-
-    /* identical to box height */
-
-    /* Color/Grey/Grey 3 */
-    color: #3C4858;
   }
 }
