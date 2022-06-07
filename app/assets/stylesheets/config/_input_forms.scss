@@ -1,0 +1,48 @@
+.input {
+  /* Input */
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: #FFFFFF;
+
+  border: 1px solid $five_grey;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+  border-radius: 6px;
+
+  .large_text_field {
+    position: absolute;
+    width: 327px;
+    height: 160px;
+    left: 868px;
+    top: 500px;
+  }
+
+  .large_field {
+    position: absolute;
+    width: 327px;
+    height: 46px;
+    left: 117px;
+    top: 492px;
+
+    &hover {
+      border: 2px solid $primary;
+    }
+  }
+
+  .small_field {
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    left: 578px;
+    top: 488px;
+
+    &hover {
+      border: 2px solid $primary;
+    }
+  }
+}
