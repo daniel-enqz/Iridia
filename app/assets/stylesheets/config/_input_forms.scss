@@ -14,7 +14,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
   border-radius: 6px;
 
-  .large_text_field {
+  .large-text-field {
     position: absolute;
     width: 327px;
     height: 160px;
@@ -22,7 +22,7 @@
     top: 500px;
   }
 
-  .large_field {
+  .large-field {
     position: absolute;
     width: 327px;
     height: 46px;
@@ -34,7 +34,7 @@
     }
   }
 
-  .small_field {
+  .small-field {
     position: absolute;
     width: 154px;
     height: 46px;
@@ -44,5 +44,54 @@
     &hover {
       border: 2px solid $primary;
     }
+  }
+
+  .placeholder {
+    /* Placeholder */
+    position: absolute;
+    left: 4.89%;
+    right: 10.7%;
+    top: 52.17%;
+    bottom: 20.29%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    /* Color/ Grey/ Grey 4 */
+    color: #8492A6;
+
+    .error {
+      /* States/Blush */
+      border: 1px solid $error;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+      border-radius: 6px;
+      .red_text {
+        color: #73191E;
+      }
+    }
+  }
+
+  .label {
+    /* Label */
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 75.36%;
+
+    /* Label */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    /* identical to box height */
+
+    /* Color/Grey/Grey 3 */
+    color: #3C4858;
   }
 }
