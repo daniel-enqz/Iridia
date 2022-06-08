@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-// External libraries
+// Graphical variables
+@import "config/colors";
+@import "config/variables";
 
 // Your CSS partials
 @import "components/index";

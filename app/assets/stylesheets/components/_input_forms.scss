@@ -1,0 +1,70 @@
+@import "config/variables";
+
+.large-text-field {
+  background: #FFFFFF;
+  border: 1px solid $five_grey;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+  border-radius: 6px;
+  position: absolute;
+  width: 327px;
+  height: 160px;
+  left: 868px;
+  top: 500px;
+}
+
+.large-field {
+  background: #FFFFFF;
+  border: 1px solid $five_grey;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+  border-radius: 6px;
+  width: 100%;
+  height: 46px;
+}
+
+.large-field:hover {
+  border: 2px solid $primary;
+}
+
+.small-field {
+  background: #FFFFFF;
+  border: 1px solid $five_grey;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+  border-radius: 6px;
+  position: absolute;
+  width: 154px;
+  height: 46px;
+  left: 578px;
+  top: 488px;
+}
+
+.small-field:hover {
+  border: 2px solid $primary;
+}
+
+.placeholder {
+  /* Placeholder */
+  position: absolute;
+  left: 4.89%;
+  right: 10.7%;
+  top: 52.17%;
+  bottom: 20.29%;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* Color/ Grey/ Grey 4 */
+  color: #8492A6;
+
+  .error {
+    /* States/Blush */
+    border: 1px solid $error;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+    border-radius: 6px;
+    .red_text {
+      color: #73191E;
+    }
+  }
+}

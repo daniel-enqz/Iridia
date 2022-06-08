@@ -1,0 +1,16 @@
+.success-flash {
+  /* With dismiss button/Desktop */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+
+  position: relative;
+  width: 896px;
+  height: 52px;
+
+  background: #ECFDF5;
+  border-radius: 6px;
+}
