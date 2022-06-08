@@ -1,7 +1,6 @@
 @import "config/variables";
 
 .sign-in-card {
-/* Auto layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,99 +13,19 @@
   background: $white;
 }
 
-.auth-card-layout {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  gap: 48px;
-  width: 400px;
-  height: 407px;
-}
-
 .auth-card-welcome {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 10px;
-
-  width: 400px;
-  height: 32px;
-  h2 {
-    font-family: 'Poppins';
-    text-align: center;
-    color: $three_grey;
-    flex: none;
-    flex-grow: 1;
-  }
+  font-family: 'Poppins';
+  text-align: center;
+  color: $three_grey;
+  flex: none;
+  flex-grow: 1;
 }
 
 .auth-card-detail {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 6px;
-
-  width: 400px;
-  height: 20px;
-
-
-  /* Inside auto layout */
-  flex: none;
-  align-self: stretch;
-  flex-grow: 0;
-
-  p {
-    /* Don’t have an account? */
-    width:max-content;
-    height: 20px;
-
-    /* Body 2/text-sm - 14px font-normal */
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-
-    /* identical to box height, or 143% */
-    /* Color/Grey/Grey 3 */
-    color: $three_grey;
-  }
-}
-
-.auth-card-input-fields {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  width: 400px;
-  height: 186px;
-}
-
-.email-field {
-  height: 69px;
-}
-
-.password-field {
-  height: 69px;
-}
-
-.button-field {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 38px;
-  width: 400px;
-  height: 53px;
-  margin-top: 50px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $three_grey;
 }
