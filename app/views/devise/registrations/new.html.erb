@@ -14,16 +14,16 @@
             <%= f.label :email, class: "input-label", value: "Email address" %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "large-field" %>
           </div>
-          <div class="password-field">
+          <div class="password-field mt-4">
             <%= f.label :password, class: "input-label" %><br />
             <%= f.password_field :password, autocomplete: "new-password", class: "large-field" %>
           </div>
-          <div class="password-field">
+          <div class="password-field mt-4">
             <%= f.label :password_confirmation, class: "input-label" %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "large-field" %>
           </div>
         </div>
-        <div class="button-field">
+        <div class="button-field mt-3">
           <div class="actions">
             <%= f.submit "Sign up", class: "button button-primary" %>
           </div>
