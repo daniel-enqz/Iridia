@@ -3,9 +3,8 @@
 .sign-in-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 87px 32px;
+  padding: 50px 32px;
   gap: 40px;
   width: 464px;
   height: 581px;
@@ -17,8 +16,6 @@
   font-family: 'Poppins';
   text-align: center;
   color: $three_grey;
-  flex: none;
-  flex-grow: 1;
 }
 
 .auth-card-detail {
@@ -26,6 +23,5 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
   color: $three_grey;
 }

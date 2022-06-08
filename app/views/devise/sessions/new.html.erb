@@ -1,18 +1,14 @@
 <div class="flex justify-center">
-  <div class="sign-in-card box-shadow">
+  <div class="sign-in-card box-shadow effect-3d">
     <h2 class="text-2xl font-black auth-card-welcome">Welcome Back!</h2>
     <p class="auth-card-detail">Don’t have an account? <%= link_to "Sign Up", new_user_registration_path, class: "text-primary font-bold" %></p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="field">
-        <%= f.label :email, class: "input-label", value: "Email address" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "large-field" %>
-      </div>
-      <div class="field">
-        <%= f.label :password, class: "input-label" %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "large-field"  %>
-      </div>
-      <div class="actions">
+      <%= f.label :email, class: "input-label", value: "Email address" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "large-field mb-3" %>
+      <%= f.label :password, class: "input-label" %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "large-field mb-3" %>
+      <div class="flex justify-center mt-10">
         <%= f.submit "Sign in", class: "button button-primary" %>
       </div>
     <% end %>
