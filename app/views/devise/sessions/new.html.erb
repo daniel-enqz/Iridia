@@ -8,6 +8,7 @@
         <p>Don’t have an account? <%= link_to "Sign Up", new_user_registration_path, class: "text-primary font-bold" %></p>
       </div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
         <div class="auth-card-input-fields">
           <div class="email-field">
             <%= f.label :email, class: "input-label", value: "Email address" %><br />
