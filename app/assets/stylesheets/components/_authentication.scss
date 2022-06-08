@@ -8,11 +8,9 @@
   align-items: center;
   padding: 87px 32px;
   gap: 40px;
-
-  position: relative;
   width: 464px;
   height: 581px;
-
+  border-radius: 20px;
   background: $white;
 }
 
@@ -82,7 +80,7 @@
   }
 }
 
-.auth-card-detail-input-fields {
+.auth-card-input-fields {
   /* Auto layout */
   display: flex;
   flex-direction: column;
@@ -95,14 +93,10 @@
 }
 
 .email-field {
-  /* Auto layout */
-  width: max-content;
   height: 69px;
 }
 
 .password-field {
-  /* Input / Text Input / Value */
-  width: max-content;
   height: 69px;
 }
 
@@ -114,18 +108,7 @@
   align-items: center;
   padding: 0px;
   gap: 38px;
-  width: 137px;
-  height: 53px;
-}
-
-.frame22 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 34px;
-
   width: 400px;
-  height: 306px;
+  height: 53px;
+  margin-top: 50px;
 }

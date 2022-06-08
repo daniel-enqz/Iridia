@@ -1,27 +1,29 @@
-<div class="sign-in-card">
-  <div class="auth-card-layout">
-    <div class="auth-card-welcome">
-      <h2 class="text-2xl font-bold">Welcome Back!</h2>
-    </div>
-    <div class="auth-card-detail">
-      <p>Don’t have an account? <%= link_to "Sign Up", new_user_registration_path, class: "text-primary font-bold" %></p>
-    </div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="auth-card-detail-input-fields">
-        <div class="email-field">
-          <%= f.label :email, class: "input-label" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
-        </div>
-        <div class="password-field">
-          <%= f.label :password, class: "input-label" %><br />
-          <%= f.password_field :password, autocomplete: "current-password", class: "input"  %>
-        </div>
+<div class="flex justify-center">
+  <div class="sign-in-card box-shadow">
+    <div class="auth-card-layout">
+      <div class="auth-card-welcome">
+        <h2 class="text-2xl font-black">Welcome Back!</h2>
       </div>
-      <div class="button-field">
-        <div class="actions">
-          <%= f.submit "Log in" %>
-        </div>
+      <div class="auth-card-detail">
+        <p>Don’t have an account? <%= link_to "Sign Up", new_user_registration_path, class: "text-primary font-bold" %></p>
       </div>
-    <% end %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="auth-card-input-fields">
+          <div class="email-field">
+            <%= f.label :email, class: "input-label", value: "Email address" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "large-field" %>
+          </div>
+          <div class="password-field">
+            <%= f.label :password, class: "input-label" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "large-field"  %>
+          </div>
+        </div>
+        <div class="button-field">
+          <div class="actions">
+            <%= f.submit "Sign in", class: "button button-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -9,14 +9,21 @@
   gap: 10px;
   background: $primary;
   border-radius: 6px;
-  .fill {
-    background: $primary;
-    border-radius: 6px;
-  }
-  .light{
-    border: 1px solid $primary;
-    border-radius: 6px;
-  }
+  color: white;
+}
+
+.button-primary:hover {
+  background: #6a5cea;
+}
+
+.button-light {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 18px 40px;
+  gap: 10px;
+  border: 1px solid $primary;
+  border-radius: 6px;
 }
 
 .button-secondary {
