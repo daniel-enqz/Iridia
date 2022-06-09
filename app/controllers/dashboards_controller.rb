@@ -1,3 +1,5 @@
 class DashboardsController < ApplicationController
-  def show; end
+  def show
+    skip_authorization
+  end
 end
