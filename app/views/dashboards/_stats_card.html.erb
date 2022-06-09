@@ -1,19 +1,19 @@
 <%# DONATIONS %>
 <div class = "py-4 px-8 bg-white shadow-lg rounded-lg m-3 effect-3d blurr-filter">
-  <h2 class="text-gray-800 text-3xl font-semibold">You have posted <%= @dashboard.donations.count %>
-  <% if @dashboard.donations.count == 1 %>
+  <h2 class="text-gray-800 text-3xl font-semibold">You have posted <%= current_user.owned_donations.count %>
+  <% if current_user.owned_donations.count == 1 %>
     donation
   <% else %>
     donations
   <% end %>
   </h2>
-  <p class="text-gray-800 text-xl font-semibold">Where <%= @dashboard.donations.where.not(customer_id: nil).count %> have been claimed by other people</p>
+  <p class="text-gray-800 text-xl font-semibold">Where <%= current_user.owned_donations.where.not(customer_id: nil).count %> have been claimed by other people</p>
 </div>
 
 <%# CLAIMS %>
 <div class = "py-4 px-8 bg-white shadow-lg rounded-lg m-3 effect-3d blurr-filter">
-  <h2 class="text-gray-800 text-3xl font-semibold">You have claimed <%= @dashboard.claimed.count %>
-    <% if @dashboard.claimed.count == 1 %>
+  <h2 class="text-gray-800 text-3xl font-semibold">You have claimed <%= current_user.claimed_donations.count %>
+    <% if current_user.claimed_donations.count == 1 %>
       donation
       <% else %>
       donations
