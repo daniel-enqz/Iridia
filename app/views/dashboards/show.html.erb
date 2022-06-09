@@ -1,0 +1,30 @@
+<p class="font-extrabold text-5xl mt-5 ml-5">My Dashboard</p>
+
+<div class="flex flex-row mt-5">
+  <div class="flex flex-col">
+      <p class="font-bold text-xl ml-5 mb-3">Your Posts</p>
+      <% current_user.owned_donations.each do |donation| %>
+          <%= render 'dashboards/donated_card', donation: donation %>
+      <% end %>
+
+      <%= link_to new_donation_path, class: "rounded-lg max-w-sm rounded overflow-hidden shadow-lg m-3 py-4 px-8 bg-light-midnight" do %>
+        <h2 class="text-gray-800 text-3xl font-semibold text-white">New Donation <span>&#43;</span> </h2>
+      <% end %>
+  </div>
+
+  <div class="flex flex-col">
+    <% if current_user.claimed_donations.count == 0%>
+      <p class="font-bold text-xl ml-5 mb-3">There are many donations you can claim</p>
+      <%= link_to 'All Donations', donations_path, class: "ml-5 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"%>
+    <% else %>
+      <p class="font-bold text-xl ml-5 mb-3">Claimed Donations</p>
+      <% current_user.claimed_donations.each do |claimed| %>
+          <%= render 'dashboards/claimed_card', claimed: claimed %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="flex flex-col">
+    <p class="font-bold text-xl ml-5 mb-3">Your Stats</p>
+  </div>
+</div>
