@@ -7,10 +7,8 @@
           <%= render 'dashboards/donated_card', donation: donation %>
       <% end %>
 
-      <%= link_to new_donation_path class: "py-4 px-8 shadow-lg rounded-lg mt-20" do %>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg m-3 py-4 px-8 bg-light-midnight">
-            <h2 class="text-gray-800 text-3xl font-semibold text-white">New Donation <span>&#43;</span> </h2>
-        </div>
+      <%= link_to new_donation_path, class: "rounded-lg max-w-sm rounded overflow-hidden shadow-lg m-3 py-4 px-8 bg-light-midnight" do %>
+        <h2 class="text-gray-800 text-3xl font-semibold text-white">New Donation <span>&#43;</span> </h2>
       <% end %>
   </div>
 
