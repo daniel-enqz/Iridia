@@ -1,6 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    @dashboard = current_user.dashboard
-    authorize @dashboard
+    skip_authorization
   end
 end
