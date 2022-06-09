@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full bg-gray-100">
   <head>
     <title>Iridia</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" />
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <%# Avatar Dropdown %>
   </head>
 
-  <body>
-    <%# <main class="container mx-auto mt-28 px-5 flex"> %>
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/flashes' %>
+  <body class="h-full">
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <div class="margin-top mx-5">
       <%= yield %>
-    <%# </main> %>
+    </div>
   </body>
 </html>

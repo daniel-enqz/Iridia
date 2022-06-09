@@ -1,0 +1,39 @@
+@import "config/variables";
+
+.button-primary {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 18px 40px;
+  gap: 10px;
+  .fill {
+    background: $primary;
+    border-radius: 6px;
+  }
+  .light{
+    border: 1px solid $primary;
+    border-radius: 6px;
+  }
+}
+
+.button-secondary {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+
+  .red {
+    background: #FFFFFF;
+    border: 1px solid #FC8383;
+    border-radius: 6px;
+  }
+
+  .blue {
+    background: #0782D0;
+    border-radius: 6px;
+  }
+}

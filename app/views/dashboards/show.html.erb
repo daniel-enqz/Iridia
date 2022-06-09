@@ -1,0 +1,37 @@
+<div class="flex mt-5 ml-5 mb-10 flex-wrap justify-between items-center">
+  <p class="font-extrabold text-5xl">My Dashboard</p>
+  <p class="font-semibold text-lg"><%= current_user.email %> </p>
+</div>
+
+
+<div class="flex flex-row mt-5">
+  <div class="flex flex-col">
+      <p class="font-bold text-xl ml-5 mb-3">Your Posts</p>
+      <% @dashboard.donations.each do |donation| %>
+          <%= render 'dashboards/donated_card', donation: donation %>
+      <% end %>
+
+      <%= link_to new_donation_path class: "py-4 px-8 shadow-lg rounded-lg mt-20" do %>
+        <div class="max-w-sm rounded overflow-hidden shadow-lg m-3 py-4 px-8 bg-light-midnight">
+            <h2 class="text-gray-800 text-3xl font-semibold text-white">New Donation <span>&#43;</span> </h2>
+        </div>
+      <% end %>
+  </div>
+
+  <div class="flex flex-col">
+    <% if @dashboard.claimed.count == 0%>
+      <p class="font-bold text-xl ml-5 mb-3">There are many donations you can claim</p>
+      <%= link_to 'All Donations', donations_path, class: "ml-5 mt-4 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"%>
+    <% else %>
+      <p class="font-bold text-xl ml-5 mb-3">Claimed Donations</p>
+      <% @dashboard.claimed.each do |claimed| %>
+          <%= render 'dashboards/claimed_card', claimed: claimed %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="flex flex-col ml-5">
+    <p class="font-bold text-xl ml-5 mb-3">Your Stats</p>
+    <%= render 'dashboards/stats_card', dashboard: @dashboard %>
+  </div>
+</div>
