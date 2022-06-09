@@ -9,10 +9,13 @@ class User < ApplicationRecord
 
   # AS CUSTOMER
   has_many :claimed_donations, foreign_key: :customer_id, class_name: "Donation", dependent: :destroy
+<<<<<<< HEAD
 
   def dashboard
     User::Dashboard.new(self)
   end
+=======
+>>>>>>> develop
 
   def owns?(donation)
     donation.owner == self
